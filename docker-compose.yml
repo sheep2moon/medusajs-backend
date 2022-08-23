@@ -16,6 +16,7 @@ services:
       JWT_SECRET: fishU78time
       COOKIE_SECRET: fishU78time
       ADMIN_CORS: https://fishingtime-admin.netlify.app
+      STORE_CORS: http://195.136.90.55:8000
       PORT: 9000
     ports:
       - "9000:9000"
