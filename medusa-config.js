@@ -52,6 +52,15 @@ const plugins = [
   //     webhook_secret: STRIPE_WEBHOOK_SECRET,
   //   },
   // },
+  {
+    resolve: `medusa-file-minio`,
+    options: {
+      endpoint: "minio.server.com",
+      bucket: "test",
+      access_key_id: "fishU78time",
+      secret_access_key: "fishU78time",
+    },
+  },
 ];
 
 module.exports = {
