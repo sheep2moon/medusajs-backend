@@ -55,8 +55,8 @@ const plugins = [
   {
     resolve: `medusa-file-minio`,
     options: {
-      endpoint: "minio.server.com",
-      bucket: "test",
+      endpoint: "minio.fishingtime.pl",
+      bucket: "product-images",
       access_key_id: "fishU78time",
       secret_access_key: "fishU78time",
     },
