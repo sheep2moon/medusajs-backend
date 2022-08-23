@@ -53,12 +53,13 @@ const plugins = [
   //   },
   // },
   {
-    resolve: `medusa-file-minio`,
+    resolve: `medusa-file-s3`,
     options: {
-      endpoint: "minio.fishingtime.pl",
-      bucket: "product-images",
-      access_key_id: "fishU78time",
-      secret_access_key: "fishU78time",
+      s3_url: "https://fishing-medusa-storage.s3.eu-central-1.amazonaws.com",
+      bucket: "fishing-medusa-storage",
+      region: "eu-central-1",
+      access_key_id: "AKIAUU7K2D3UEFDU3KFL",
+      secret_access_key: "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",
     },
   },
 ];
