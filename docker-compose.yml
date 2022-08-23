@@ -48,7 +48,7 @@ services:
     environment:
       MINIO_ROOT_USER: fishU78time
       MINIO_ROOT_PASSWORD: fishU78time
-    command: server --console-address ":9001" /data
+    command: server --address ":8000" --console-address ":9001" /data
 
   proxy:
     image: "jc21/nginx-proxy-manager:latest"
