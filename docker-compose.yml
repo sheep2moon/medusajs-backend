@@ -15,7 +15,7 @@ services:
       NODE_ENV: production
       JWT_SECRET: fishU78time
       COOKIE_SECRET: fishU78time
-      ADMIN_CORS: https://fishingtime-admin.netlify.app
+      ADMIN_CORS: https://fishingtime-admin.netlify.app`
       PORT: 9000
     ports:
       - "9000:9000"
@@ -37,6 +37,17 @@ services:
     container_name: cache
     expose:
       - 6379
+
+  minio:
+    image: minio/minio:edge
+    environment:
+      MINIO_ACCESS_KEY: fishU78time
+      MINIO_SECRET_KEY: fishU78time
+    volumes:
+      - datastore:/data
+    ports:
+      - 8000:8000
+    command: server /data
 
   proxy:
     image: "jc21/nginx-proxy-manager:latest"
