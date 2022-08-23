@@ -38,18 +38,6 @@ services:
     expose:
       - 6379
 
-  minio:
-    image: minio/minio
-    ports:
-      - "8000:8000"
-      - "9001:9001"
-    volumes:
-      - minio_storage:/data
-    environment:
-      MINIO_ROOT_USER: fishU78time
-      MINIO_ROOT_PASSWORD: fishU78time
-    command: server --address ":8000" --console-address ":9001" /data
-
   proxy:
     image: "jc21/nginx-proxy-manager:latest"
     restart: unless-stopped
