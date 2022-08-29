@@ -47,7 +47,7 @@ const plugins = [
     resolve: `medusa-payment-stripe`,
     options: {
       api_key: STRIPE_API_KEY,
-      // webhook_secret: STRIPE_WEBHOOK_SECRET,
+      webhook_secret: STRIPE_WEBHOOK_SECRET,
     },
   },
   {
