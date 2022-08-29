@@ -9,22 +9,8 @@ services:
     depends_on:
       - postgres
       - redis
-    environment:
-      DATABASE_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
-      REDIS_URL: redis://redis:6379
-      NODE_ENV: development
-      JWT_SECRET: fishU78time
-      COOKIE_SECRET: fishU78time
-      ADMIN_CORS: https://fishingtime-admin.netlify.app
-      STORE_CORS: http://195.136.90.55:8000
-      STRIPE_API_KEY: sk_test_51HHDaRLRYs4ZeVj7LkU2dAHh7UaH7ZQQz4vHpj3rIeOKb9vPKzVRGTi6Wce59Sd5A1X06HxcTVQBWsLKjs8s690Y007KQlOANO
-      STRIPE_WEBHOOK_SECRET: whsec_VaUIsjAHVUq2yLbXZaHRoGGMyafclcus
-      TYPEORM_CONNECTION: postgres
-      TYPEORM_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
-      TYPEORM_LOGGING: true
-      TYPEORM_ENTITIES: ./node_modules/@medusajs/medusa/dist/models/*.js
-      TYPEORM_MIGRATIONS: ./node_modules/@medusajs/medusa/dist/migrations/*.js
-      PORT: 9000
+    env_file:
+      - backend.env
     ports:
       - "9000:9000"
     volumes:
