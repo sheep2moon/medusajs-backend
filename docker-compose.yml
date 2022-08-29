@@ -17,6 +17,8 @@ services:
       COOKIE_SECRET: fishU78time
       ADMIN_CORS: https://fishingtime-admin.netlify.app
       STORE_CORS: http://195.136.90.55:8000
+      STRIPE_API_KEY: pk_test_51HHDaRLRYs4ZeVj7ojdBF3pdtdowMVN3WX2sZXFbWftuVUgeeSpECtmJUsKiwxwl8CjW30ss7rnfzMDBk0vxyfa600K1mBcCSg
+      STRIPE_WEBHOOK_SECRET: sk_test_51HHDaRLRYs4ZeVj7LkU2dAHh7UaH7ZQQz4vHpj3rIeOKb9vPKzVRGTi6Wce59Sd5A1X06HxcTVQBWsLKjs8s690Y007KQlOANO
       PORT: 9000
     ports:
       - "9000:9000"
