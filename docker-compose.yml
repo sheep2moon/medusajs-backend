@@ -32,6 +32,18 @@ services:
     expose:
       - 6379
 
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    restart: unless-stopped
+    ports:
+      - 7700:7700
+    environment:
+      - MEILI_MASTER_KEY=fishingtime
+    volumes:
+      - meilisearch-data:/meili_data
+    command:
+      - /bin/meilisearch
+
   proxy:
     image: "jc21/nginx-proxy-manager:latest"
     restart: unless-stopped
