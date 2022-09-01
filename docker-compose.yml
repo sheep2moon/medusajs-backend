@@ -58,3 +58,4 @@ services:
 volumes:
   node_modules:
   minio_storage:
+  meilisearch-data:
