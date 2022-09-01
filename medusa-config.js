@@ -25,19 +25,15 @@ try {
 const ADMIN_CORS =
   process.env.ADMIN_CORS || "http://localhost:7000,http://localhost:7001";
 
-// CORS to avoid issues when consuming Medusa from a client
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
-
-// Database URL (here we use a local database called medusa-development)
 const DATABASE_URL =
   process.env.DATABASE_URL || "postgres://localhost/medusa-store";
 
-// Medusa uses Redis, so this needs configuration as well
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
-
-// Stripe keys
 const STRIPE_API_KEY = process.env.STRIPE_API_KEY || "";
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
+const MEILISEARCH_HOST = process.env.MEILISEARCH_HOST;
+const MEILISEARCH_API_KEY = process.env.MEILISEARCH_API_KEY;
 
 // This is the place to include plugins. See API documentation for a thorough guide on plugins.
 const plugins = [
@@ -58,6 +54,30 @@ const plugins = [
       region: "eu-central-1",
       access_key_id: "AKIAUU7K2D3UEFDU3KFL",
       secret_access_key: "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",
+    },
+  },
+  {
+    resolve: `medusa-plugin-meilisearch`,
+    options: {
+      // config object passed when creating an instance of the MeiliSearch client
+      config: {
+        host: MEILISEARCH_HOST,
+        apiKey: MEILISEARCH_API_KEY,
+      },
+      settings: {
+        // index name
+        products: {
+          // MeiliSearch's setting options to be set on a particular index
+          searchableAttributes: ["title", "description", "variant_sku"],
+          displayedAttributes: [
+            "title",
+            "description",
+            "variant_sku",
+            "thumbnail",
+            "handle",
+          ],
+        },
+      },
     },
   },
 ];
