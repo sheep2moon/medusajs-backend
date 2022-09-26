@@ -76,6 +76,8 @@ const plugins = [
             "thumbnail",
             "handle",
           ],
+          sortableAttributes: ["updated_at", "variants.prices.amount"],
+          filterableAttributes: ["variants.prices.amount"],
         },
       },
     },
