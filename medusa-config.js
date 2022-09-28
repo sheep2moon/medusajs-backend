@@ -70,11 +70,13 @@ const plugins = [
           // MeiliSearch's setting options to be set on a particular index
           searchableAttributes: ["title", "description", "variant_sku"],
           displayedAttributes: [
+            "id",
             "title",
             "description",
             "variant_sku",
             "thumbnail",
             "handle",
+            "hs_code",
             "updated_at",
             "variants.prices.amount",
             "variants.inventory_quantity",
@@ -88,8 +90,10 @@ const plugins = [
           filterableAttributes: [
             "updated_at",
             "created_at",
+            "collection.metadata.parent",
             "variants.prices.amount",
             "collection.title",
+            "hs_code",
           ],
         },
       },
