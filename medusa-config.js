@@ -96,6 +96,7 @@ const plugins = [
             "collection.title",
             "hs_code",
             "tags.value",
+            "status",
           ],
         },
       },
