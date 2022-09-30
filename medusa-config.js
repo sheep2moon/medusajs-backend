@@ -80,6 +80,7 @@ const plugins = [
             "updated_at",
             "variants.prices.amount",
             "variants.inventory_quantity",
+            "status",
           ],
           sortableAttributes: [
             "updated_at",
@@ -94,6 +95,7 @@ const plugins = [
             "variants.prices.amount",
             "collection.title",
             "hs_code",
+            "tags.value",
           ],
         },
       },
